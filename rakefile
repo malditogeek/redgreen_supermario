@@ -1,0 +1,26 @@
+require 'rake'
+
+$LOAD_PATH.unshift('lib')
+ 
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gem|
+    gem.name = "redgreen_supermario"
+    gem.summary = "SuperMario galore for your tests."
+    gem.email = "hackers.are.rockstars@gmail.com"
+    gem.homepage = "http://github.com/malditogeek/redgreen_supermario"
+    gem.description = "SuperMario galore for your tests."
+    gem.authors = ["Mauro Pompilio"]
+    gem.files.include ['lib/*', 'sounds/*']
+  end
+rescue LoadError
+  puts "Jeweler, or one of its dependencies, is not available. Install it with: gem install jeweler"
+end
+ 
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = 'redgreen_supermario'
+  rdoc.rdoc_files.include('README.markdown')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
